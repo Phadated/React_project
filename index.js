@@ -5,7 +5,7 @@ const app = express(); // generate new application, inside single project we mig
 //creating a route handler
 //second argument is the arrow function
 app.get("/", (req, res) => {
-	res.send({ hi: "there" });
+	res.send({ bye: "Buddy" });
 });
 
 // when ever heroku run our app , it has the ability to injectenviroment variable
@@ -14,6 +14,6 @@ app.get("/", (req, res) => {
 //until our app is starting to be executed by heroku what the port is.
 //look at the underlying envinroment variable and see if they have set the port for us
 //developemnt enviroment 5000 and production enviroment process.env.port
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000; // this should be capitalise.
 // this line will instruct express to tell m=node to listen on port 5000
 app.listen(PORT); //localhost:5000
