@@ -1,12 +1,19 @@
 const express = require("express"); // this will import express module
 const app = express(); // generate new application, inside single project we might have several different express application
 //  going to use only one app , set up configuration that listen to incoming request
+require("./services/passport");
+//authRoutes is a function that takes app object and attaches two routes to it
+//const authRoutes = require('./routes/authRoutes');
+
+//authRoutes(app);
+//(app) second parantheses immediately call the function we required in
+require("./routes/authRoutes")(app);
 
 //creating a route handler
 //second argument is the arrow function
-app.get("/", (req, res) => {
-	res.send({ bye: "Buddy" });
-});
+// app.get("/", (req, res) => {
+// 	res.send({ bye: "Buddy" });
+// });
 
 // when ever heroku run our app , it has the ability to injectenviroment variable
 //enviroment variable are the variable they are set in the under lying runtime that node is running on top of.
